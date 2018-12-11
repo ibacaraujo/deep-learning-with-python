@@ -20,3 +20,27 @@ def naive_relu_2d(x):
 
 print(naive_relu_2d(np.array([[1, 2, 3, 4], 
 			      [-4, -3, -2, -1]])))
+
+# Addition
+def naive_addition(x, y):
+  assert len(x) == len(y)
+	
+  x = x.copy()
+  for i in range(len(x)):
+    x[i] = x[i] + y[i]
+  return x
+  
+print(naive_addition([1, 2, 3, 4], [1, 2, 3, 4]))
+
+def naive_addition_2d(x, y):
+  assert len(x.shape) == 2
+  assert x.shape == y.shape
+	
+  x = x.copy()
+  for i in range(x.shape[0]):
+    for j in range(x.shape[1]):
+      x[i, j] = x[i, j] + y[i, j]
+  return x
+  
+print(naive_addition_2d(np.array([[1, 2], [3, 4]]), 
+						np.array([[1, 2], [3, 4]])))
