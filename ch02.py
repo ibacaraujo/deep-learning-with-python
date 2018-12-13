@@ -57,3 +57,15 @@ def naive_add_matrix_and_vector(x, y):
 	return x
 	
 print(naive_add_matrix_and_vector(np.array([[1, 2], [3, 4]]), np.array([1, 2])))
+
+def naive_vector_dot(x, y):
+	assert len(x.shape) == 1
+	assert len(y.shape) == 1
+	assert x.shape[0] == y.shape[0]
+	
+	z = 0
+	for i in range(x.shape[0]):
+		z += x[i] * y[i]
+	return z
+	
+print(naive_vector_dot(np.array([1, 2]), np.array([1, 2])))
