@@ -44,3 +44,16 @@ def naive_addition_2d(x, y):
   
 print(naive_addition_2d(np.array([[1, 2], [3, 4]]), 
 						np.array([[1, 2], [3, 4]])))
+
+def naive_add_matrix_and_vector(x, y):
+	assert len(x.shape) == 2 # 2D Numpy tensor
+	assert len(y.shape) == 1 # 1D Numpy tensor
+	assert x.shape[1] == y.shape[0]
+	
+	x = x.copy()
+	for i in range(x.shape[0]):
+		for j in range(x.shape[1]):
+			x[i, j] += y[j]
+	return x
+	
+print(naive_add_matrix_and_vector(np.array([[1, 2], [3, 4]]), np.array([1, 2])))
