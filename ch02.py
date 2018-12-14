@@ -82,3 +82,11 @@ def naive_matrix_vector_dot(x, y):
 	return z
 	
 print(naive_matrix_vector_dot(np.array([[1, 2], [3, 4]]), np.array([1, 2])))
+
+def naive_matrix_vector_dot2(x, y):
+	z = np.zeros(x.shape[0])
+	for i in range(x.shape[0]):
+		z[i] = naive_vector_dot(x[i, :], y)
+	return z
+	
+print(naive_matrix_vector_dot2(np.array([[1, 2], [3, 4]]), np.array([1, 2])))
