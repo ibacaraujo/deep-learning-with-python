@@ -21,3 +21,5 @@ output_tensor = layers.Dense(10, activation='softmax')(x)
 model = models.Model(inputs=input_tensor, outputs=output_tensor)
 
 model.compile(optimizer=optimizers.RMSprop(lr=0.001), loss='mse', metrics=['accuracy'])
+
+model.fit(input_tensor, output_tensor, batch_size=128, epochs=10)
